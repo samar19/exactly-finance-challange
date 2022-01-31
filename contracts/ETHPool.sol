@@ -19,9 +19,10 @@ contract ETHPool is AccessControl {
   
     address[] public users;
       
-    struct DepositValue {
+    struct DepositValue  {
         uint256 value;
         bool hasValue;
+        uint256 reward;
     }
 
     mapping(address => DepositValue) public deposits;
@@ -55,7 +56,8 @@ contract ETHPool is AccessControl {
 
            uint rewards = ((deposits[user].value * msg.value) / total);
 
-           deposits[user].value += rewards;
+           deposits[user].reward += rewards;
+           total+=rewards;
         }
     }
 
@@ -63,16 +65,16 @@ contract ETHPool is AccessControl {
 
     function withdraw() public {
         uint256 deposit = deposits[msg.sender].value;
-        
+        uint256 rewardval = deposits[msg.sender].reward;
         require(deposit > 0, "don't have withdraws");
-
+        
         deposits[msg.sender].value = 0;
-
+        deposits[msg.sender].reward=0;
         (bool success, ) = msg.sender.call{value:deposit}("");
-  
+         total-=(deposit+rewardval);
         require(success, "Transfer failed");
-
-        emit Withdraw(msg.sender, deposit);
+        
+        emit Withdraw(msg.sender, (deposit+rewardval));
     }
 
     function addTeam(address account) public {

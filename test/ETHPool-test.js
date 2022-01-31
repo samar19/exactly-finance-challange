@@ -58,7 +58,8 @@ describe("ETHPool", function () {
 
     const txt = {
       to: ethpool.address,
-      value: oneEther
+      value: oneEther,
+      reward:0
     };
 
     await owner.sendTransaction(txt);
@@ -90,12 +91,14 @@ describe("ETHPool", function () {
     
     let txt1 = {
       to: ethpool.address,
-      value: oneHundredEth
+      value: oneHundredEth,
+      reward:0
     };
   
     let txt2 = {
       to: ethpool.address,
-      value: threeHundredEth
+      value: threeHundredEth,
+      reward:0
     };
   
     await address1.sendTransaction(txt1);
