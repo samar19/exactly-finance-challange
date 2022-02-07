@@ -8,14 +8,11 @@ we need to add events we need in this smart contract to add two event to call (d
 
 # verify contract on Ropsten testnet
 ```
- yarn verify
-yarn run v1.22.17
-$ npx hardhat verify 0x599E6C043921387E3617f1555c39991E0d431167
+
+$ npx hardhat verify 0x35599CfFCdC8Bb29e77e316Be974D31B6a932eD2
 Successfully submitted source code for contract
-
 verified contract ETHPool on Etherscan.
-https://ropsten.etherscan.io/address/0x599E6C043921387E3617f1555c39991E0d431167#code
-
+https://ropsten.etherscan.io/address/0x35599CfFCdC8Bb29e77e316Be974D31B6a932eD2#code
 
 # Advanced Sample Hardhat Project
 

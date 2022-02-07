@@ -22,24 +22,25 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 // Go to https://hardhat.org/config/ to learn more
 
 const config: HardhatUserConfig = {
-  defaultNetwork: "hardhat",
+  defaultNetwork: "ropsten",
 solidity: {
     compilers: [
       {
         version: "0.7.6",
       },
       {
-        version: "0.8.11",
+        version: "0.8.2",
         settings: {},
       },
     ],
   },
   networks: {
     ropsten: {
-      url: process.env.ROPSTEN_URL || "https://ropsten.infura.io/ws/v3/3183d4b239ab4c18b52ec867a4f2d5ea",
+      url: process.env.ROPSTEN_URL || "",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
+  
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
