@@ -6,6 +6,17 @@ we need to build three of methods :
 use oppen zeppein access control it support team Roles 
 we need to add events we need in this smart contract to add two event to call (deposit & withdraw ) methods
 
+# verify contract on Ropsten testnet
+```
+ yarn verify
+yarn run v1.22.17
+$ npx hardhat verify 0x599E6C043921387E3617f1555c39991E0d431167
+Successfully submitted source code for contract
+
+verified contract ETHPool on Etherscan.
+https://ropsten.etherscan.io/address/0x599E6C043921387E3617f1555c39991E0d431167#code
+
+
 # Advanced Sample Hardhat Project
 
 ```shell
